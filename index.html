@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="min-h-screen ">
+        <div class="container mx-auto">
+            <h1 class="text-5xl font-[600] text-center py-6 text-blue-600">Task Management System</h1>
+            <div class="max-w-xl mx-auto bg-gray-100 my-12 p-6 rounded-md">
+                <div  class="task-form flex flex-col gap-6" id="form">
+                    <div class="text-4xl text-slate-500 text-center">Add Task</div>
+                    <div class="flex flex-col gap-5">
+                        <input type="date" id="taskDueTime" required class="py-1 w-full px-3 border text-lg outline-none rounded-md">
+                    
+                        <input type="text" id="taskTitle" placeholder="Title" required class=" py-1 w-full px-3 border text-lg outline-none rounded-md">
+            
+                        <select id="taskPriority" required class="py-1 px-3 border text-lg w-full outline-none rounded-md">
+                            <option value="" disabled selected>Select Priority</option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    
+                    <button type="submit" id="addTaskBtn" class="px-6 py-3 border font-[600] hover:bg-blue-400 border-blue-400 rounded-md">Add Task</button>
+                    </div>
+                </form>
+                
+
+                <div class="task-actions flex gap-3 flex-col">
+                    <button id="showDueTasksBtn" class="w-full py-2 bg-green-300 rounded-md">Show Due Tasks</button>
+                    <button id="sendRemindersBtn" class="w-full py-2 bg-red-300 rounded-md">Send Reminders</button>
+                </div>
+        
+                <div class="task-list-container">
+                    <h2 class="text-3xl mb-3">Task List</h2>
+
+                    <ul id="taskList" class="flex flex-col gap-3"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
